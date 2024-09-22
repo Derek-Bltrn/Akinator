@@ -8,15 +8,31 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    
+    <header>
+        <img src = "/Imagenes/Ronaldneitor.png"
+        height="250px"
+        width="auto"
+        >
+    </header>
+    <br>
     <div>
-        <p id="pregunta">Es un deporte que utilice una pelota o similares?</p>
+        <div class="cuadro">
+        <img src = "/Imagenes/Camellaldo.png">
+        </div>
+        <div class = "caja">
+        <p id="pregunta"><b>¿Es un deporte que utilice una pelota o similares?</b></p>
     </div>
-    <div>
-        <button onclick="respuesta(true)">
-            SI
+    </div>
+</h3>
+<br>
+    <div class = "boton_centrado">
+        <button class = "boton_si" onclick="respuesta(true)">
+            <span>SI</span>
         </button>
-        <button onclick="respuesta(false)">
-            NO
+    
+        <button class = "boton_no" onclick="respuesta(false)">
+            <span>NO</span>
         </button>
     </div>
     <div id="PosiblesRespuestas">
@@ -27,5 +43,6 @@
     </div>
         
     </div>
+    <br>
 </body>
 </html>
