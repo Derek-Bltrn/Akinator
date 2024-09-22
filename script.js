@@ -152,5 +152,3 @@ function respuesta(YesNo) {
         document.getElementById('pregunta').innerHTML = pregunta;
     }
 }
-
-document.getElementById('pregunta').innerHTML = pregunta;
