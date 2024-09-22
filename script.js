@@ -1,78 +1,154 @@
-let All=['atletismo','gimnasia','golf','badminton','baloncesto','beisbol','boxeo','halterofilia','hockey','rugby','remo',
-    ,'saltos','skateboarding','surf','judo','karate','taekwondo','ciclismo','tenis','tiro','tiroArco','triatlon','lucha','escalada',
-'esgrima','natacion','voleibol','futbol','waterpolo','patinaje','esqui','tiroJabalina','tiroPelotaPesada']
-
-let restantes=['Baloncesto','rugby','voleibol','waterpolo','futbol']
-let options={
-    'root':{
-        'bool':null,
+let options = {
+    'raiz': {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
-        'restantes':All,
-        "hijoIzquiero":{
-            "bool":null,
-            "pregunta":'¿Golpeas la pelota(o similares) con alguna herramienta?',
-            'restantes':['Badminton','Baloncesto','golf','beisbol','hockey','rugby','tenis','voleibol','waterpolo','futbol'],
-            'hijoIzquierdo':{
-                "bool":null,
-                "pregunta":'¿Hay una red en medio del campo de juego?',
-                'restantes': ['Badminton','golf','beisbol','hockey','tenis'],
-                'hijoIzquierdo':{
-                    "bool":null,
-                    "pregunta":'¿La pelota es completamente esferica?',
-                    'restantes': ['tenis','badminton'],
-                    'hijoIzquierdo':{
+        'restantes': ['atletismo', 'gimnasia', 'golf', 'badminton', 'baloncesto', 'beisbol', 'boxeo', 'halterofilia', 'hockey', 'rugby', 'remo',
+            'saltos', 'skateboarding', 'surf', 'judo', 'karate', 'taekwondo', 'ciclismo', 'tenis', 'tiro', 'tiroArco', 'triatlon', 'lucha', 'escalada',
+            'esgrima', 'natacion', 'voleibol', 'futbol', 'waterpolo', 'patinaje', 'esqui', 'tiroJabalina', 'tiroPelotaPesada'],
+        'si': { // Si responde "sí"
+            "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
+            'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', 'voleibol', 'waterpolo', 'futbol'],
+            'si': { // Si responde "sí"
+                "pregunta": '¿Hay una red en medio del campo de juego?',
+                'restantes': ['Badminton', 'golf', 'beisbol', 'hockey', 'tenis'],
+                'si': { // Si responde "sí"
+                    "pregunta": '¿La pelota es completamente esférica?',
+                    'restantes': ['tenis', 'badminton'],
+                    'si': { // Si responde "sí"
+                        'pregunta': '¿Se juega con raqueta?',
                         'restantes': ['tenis'],
                     },
-                    'hijoDerecho':{
+                    'no': { // Si responde "no"
                         'restantes': ['badminton'],
                     }
                 },
-                'hijoDerecho':{
-                    "bool":null,
-                    "pregunta":'¿Golpeas la pelota(o similares) con alguna herramienta?',
-                    'restantes': ['golf','beisbol','hockey'],
+                'no': { // Si responde "no"
+                    "pregunta": '¿El deporte involucra más de un implemento (ej. bate, palo)?',
+                    'restantes': ['golf', 'beisbol', 'hockey'],
+                    'si': { // Si responde "sí"
+                        'pregunta': '¿Se juega en un campo con hoyos?',
+                        'restantes': ['golf'],
+                    },
+                    'no': { // Si responde "no"
+                        'pregunta': '¿El deporte se juega sobre césped o hielo?',
+                        'restantes': ['beisbol', 'hockey'],
+                        'si': { // Si responde "sí"
+                            'pregunta': '¿Se utilizan guantes y bates?',
+                            'restantes': ['beisbol'],
+                        },
+                        'no': { // Si responde "no" 
+                            'restantes': ['hockey'],
+                        }
+                    }
                 }
             },
-            'hijoDerecho':{
-                "bool":null,
-                "pregunta":'¿Golpeas la pelota(o similares) con alguna herramienta?',
-                'restantes': ['Baloncesto','rugby','voleibol','waterpolo','futbol'],
+            'no': { // Si responde "no" a "¿Golpeas la pelota(o similares)?"
+                "pregunta": '¿El deporte se juega principalmente con las manos?',
+                'restantes': ['Baloncesto', 'rugby', 'voleibol', 'waterpolo', 'futbol'],
+                'si': { // Si responde "sí"
+                    'pregunta': '¿El deporte se juega en una cancha de agua?',
+                    'restantes': ['waterpolo', 'baloncesto', 'rugby'],
+                    'si': { // Si responde "sí"
+                        'restantes': ['waterpolo'], // Solo waterpolo se juega en cancha de agua
+                    },
+                    'no': { // Si responde "no" 
+                        'pregunta': '¿Es un deporte de contacto intenso?',
+                        'restantes': ['baloncesto', 'rugby'],
+                        'si': { // Si responde "sí"
+                            'restantes': ['rugby'], // Rugby es más intenso que baloncesto
+                        },
+                        'no': { // Si responde "no" 
+                            'restantes': ['baloncesto'], // Baloncesto es menos intenso que rugby
+                        }
+                    }
+                },
+                'no': { // Si no se juega con las manos
+                    'pregunta': '¿Se permite el uso de los pies para golpear la pelota?',
+                    'restantes': ['voleibol', 'futbol'],
+                    'si': { // Si responde "sí"
+                        'restantes': ['futbol'],
+                    },
+                    'no': { //Si responde "no"
+                        'restantes': ['voleibol'],
+                    }
+                }
             }
         },
-        "hijoDerecho":{
-            
+        'no': { // Si responde "no" a "¿Es un deporte que utilice una pelota o similares?"
+            "pregunta": '¿Es un deporte de combate?',
+            'restantes': ['judo', 'boxeo', 'taekwondo', 'lucha', 'esgrima', 'karate'],
+            'si': { // Si responde "sí"
+                "pregunta": '¿Involucra armas?',
+                'restantes': ['esgrima', 'boxeo', 'judo', 'karate', 'taekwondo', 'lucha'],
+                'si': {
+                    'restantes': ['esgrima'], // Solo esgrima involucra armas
+                },
+                'no': { // Sin armas
+                    "pregunta": '¿Es un deporte de contacto sin golpes directos?',
+                    'restantes': ['judo', 'lucha', 'karate', 'taekwondo'],
+                    'si': { // Si responde "sí"
+                        'restantes': ['judo', 'lucha'],
+                        'pregunta': '¿Se basa en agarres y lanzamientos?',
+                        'si': { //Si responde "sí"
+                            'restantes': ['judo'],
+                        },
+                        'no': { // Si responde "no"
+                            'restantes': ['lucha'],
+                        }
+                    },
+                    'no': { // Si hay golpes directos
+                        'pregunta': '¿Involucra patadas como técnica principal?',
+                        'restantes': ['karate', 'taekwondo'],
+                        'si': { // Si responde "sí"
+                            'restantes': ['taekwondo'],
+                        },
+                        'no': { // Si responde "no"
+                            'restantes': ['karate'],
+                        }
+                    }
+                }
+            },
+            'no': { // Si no es deporte de combate
+                "pregunta": '¿Está relacionado a un deporte acuático?',
+                'restantes': ['remo', 'surf', 'triatlon', 'natacion'],
+                'si': { // Si responde "sí"
+                    'pregunta': '¿Es un deporte de velocidad en el agua?',
+                    'restantes': ['natacion', 'remo'],
+                    'si': { //Si responde "sí"
+                        'restantes': ['natacion'],
+                    },
+                    'no': { // Si responde "no"
+                        'restantes': ['remo'],
+                    }
+                },
+                'no': { // No es de velocidad
+                    'pregunta': '¿Es un deporte que involucra una tabla?',
+                    'restantes': ['surf', 'triatlon'],
+                    'si': { // SI responde "sí"
+                        'restantes': ['surf'],
+                    },
+                    'no': { // Si responde "no"
+                        'restantes': ['triatlon'],
+                    }
+                }
+            }
         }
-    },
-    'preguntas':[
-        ['¿Es un deporte que utilice una pelota o similares?','¿Golpeas la pelota(o similares) con alguna herramienta?',''],
-        ['¿Es un deporte de combate?','hola',''],
-        ['¿Esta relacionado a un deporte acuatico?','hola',''],
-        ['¿Utilizan algun equipaje u objeto en los pies para desplazarte?','hola',''],
-        ['¿Involucra el lanzamiento de algun objeto/proyectil?','hola',''],
-        ['¿Tiene una meta?','hola',''],
-        ['¿Involucra levantamiento de peso?','hola',''],
-        ['¿Se suele practicar en montañas al aire libre?','hola',''],
-        ['¿Se realizan rutinas o secuencuas de movimiento usualmente artisticas?']
-    ],
-    'RespuestasRestantes':[
-        ['Badminton','Baloncesto','golf','beisbol','hockey','rugby','tenis','voleibol','waterpolo','futbol'],
-        ['judo','boxeo','taekwondo','lucha','esgrima','karate'],
-        ['remo','surf','triatlon','natacion'],
-        ['patinaje','ciclismo','skateboarding','esqui'],
-        ['tiro','tiroJabalina','tiroPelotaPesada','TiroArco'],
-        ['atletismo','saltos',''],
-        ['halterofilia',''],
-        ['escalada'],
-        ['gimnasia']
-]
-}
-let pregunta=options.preguntas[0][0];
-let YesNo;
-let i=0;
-function respuesta(YesNo){
-    if(YesNo){
-        console.log(pregunta)
+    }
+};
+
+let nodo = options.raiz;
+let pregunta = nodo.pregunta;
+
+function respuesta(YesNo) {
+    if (nodo.restantes.length == 1) {
+        document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0];
+        return;
+    } else if(YesNo) {
+        nodo = nodo.si;
+    } else if (!YesNo) {
+        nodo = nodo.no;
+    }
+    pregunta = nodo.pregunta;
+    if (pregunta) {
         document.getElementById('pregunta').innerHTML = pregunta;
-    }else{
     }
 }
