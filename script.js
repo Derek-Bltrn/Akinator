@@ -1,12 +1,12 @@
 let options = {
     'raiz': {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
-        'restantes': ['atletismo', 'gimnasia', 'golf', 'badminton', 'baloncesto', 'beisbol', 'boxeo', 'halterofilia', 'hockey', 'rugby', 'remo',
-            'saltos', 'skateboarding', 'surf', 'judo', 'karate', 'taekwondo', 'ciclismo', 'tenis', 'tiro', 'tiroArco', 'triatlon', 'lucha', 'escalada',
-            'esgrima', 'natacion', 'voleibol', 'futbol', 'waterpolo', 'patinaje', 'esqui', 'tiroJabalina', 'tiroPelotaPesada','futbol americano'],
+        'restantes': ['golf', 'badminton', 'baloncesto', 'beisbol', 'hockey', 'rugby', 'remo',
+        'surf', 'judo', 'karate', 'taekwondo', 'tenis', 'triatlon', 'lucha',
+            'esgrima', 'natacion', '', 'futbol', 'waterpolo'],
         'si': { // Si responde "sí"
             "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
-            'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', 'voleibol', 'waterpolo', 'futbol', 'futbol americano'],
+            'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', '', 'waterpolo', 'futbol'],
             'si': { // Si responde "sí"
                 "pregunta": '¿Hay una red en medio del campo de juego?',
                 'restantes': ['Badminton', 'golf', 'beisbol', 'hockey', 'tenis'],
@@ -45,7 +45,7 @@ let options = {
             },
             'no': { // Si responde "no" a "¿Golpeas la pelota(o similares)?"
                 "pregunta": '¿En el deporte se hacen muchos lanzamientos o no se le pega usualmente con los puños a la pelota?',
-                'restantes': ['Baloncesto', 'rugby', 'voleibol', 'waterpolo', 'futbol'],
+                'restantes': ['Baloncesto', 'rugby', '', 'waterpolo', 'futbol'],
                 'si': { // Si responde "sí"
                     'pregunta': '¿El deporte se juega en una cancha de agua?',
                     'restantes': ['waterpolo', 'baloncesto', 'rugby'],
@@ -68,24 +68,24 @@ let options = {
                 },
                 'no': { // Si no se hacen lanzamientos o se le pega usualmente con los puños a la pelota
                     'pregunta': '¿Se permite el uso de los pies para golpear la pelota?',
-                    'restantes': ['futbol', 'voleibol'],
+                    'restantes': ['futbol', ''],
                     'si': { // Si responde "sí"
                         'pregunta': "¿Crees que adivine?",
                         'restantes': ['futbol'],
                     },
                     'no': { //Si responde "no"
                         'pregunta': "¿Crees que adivine?",
-                        'restantes': ['voleibol'],
+                        'restantes': [''],
                     }
                 }
             }
         },
         'no': { // Si responde "no" a "¿Es un deporte que utilice una pelota o similares?"
             "pregunta": '¿Es un deporte de combate?',
-            'restantes': ['judo', 'boxeo', 'taekwondo', 'lucha', 'esgrima', 'karate'],
+            'restantes': ['judo', 'taekwondo', 'lucha', 'esgrima', 'karate'],
             'si': { // Si responde "sí"
                 "pregunta": '¿Involucra armas?',
-                'restantes': ['esgrima', 'boxeo', 'judo', 'karate', 'taekwondo', 'lucha'],
+                'restantes': ['esgrima', 'judo', 'karate', 'taekwondo', 'lucha'],
                 'si': {
                     'pregunta': "¿Crees que adivine?",
                     'restantes': ['esgrima'], // Solo esgrima involucra armas
