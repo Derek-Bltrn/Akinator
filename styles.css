@@ -2,16 +2,19 @@ header
 {
   letter-spacing: 4px;
   background: #a2223d;
-  padding: 5px;
   color: white;
   width: 100%;
+}
+header.img
+{
+    height: 10px;
 }
 #pregunta{
     font: bold
 }
 body 
 {
-    padding-top: 2em;
+    padding-top: .7em;
     margin: auto;
     text-align: center;
     font-family: system-ui;
