@@ -2,8 +2,7 @@ let options = {
     'raiz': {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
         'restantes': ['atletismo', 'gimnasia', 'golf', 'badminton', 'baloncesto', 'beisbol', 'boxeo', 'halterofilia', 'hockey', 'rugby', 'remo',
-            'saltos', 'skateboarding', 'surf', 'judo', 'karate', 'taekwondo', 'ciclismo', 'tenis', 'tiro', 'tiroArco', 'triatlon', 'lucha', 'escalada',
-            'esgrima', 'natacion', 'voleibol', 'futbol', 'waterpolo', 'patinaje', 'esqui', 'tiroJabalina', 'tiroPelotaPesada'],
+        'restantes': ['golf', 'badminton', 'baloncesto', 'beisbol', 'boxeo', 'hockey', 'rugby', 'remo',
         'si': { // Si responde "sí"
             "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
             'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', 'voleibol', 'waterpolo', 'futbol'],
@@ -134,18 +133,16 @@ let options = {
         }
     }
 };
-
+//Declaramos una variable para ir teniendo registro del nodo en el que estamos
 let nodo = options.raiz;
 let pregunta = nodo.pregunta;
-
 function respuesta(YesNo) {
     if (nodo.restantes.length == 1) {
         document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0];
         return;
-    } else if(YesNo) {
-        nodo = nodo.si;
-    } else if (!YesNo) {
-        nodo = nodo.no;
+    } 
+    //Si dieron que si al botón se actualiza el nodo pasando a su nodo hijo "si"
+    if(YesNo)
     }
     pregunta = nodo.pregunta;
     if (pregunta) {
