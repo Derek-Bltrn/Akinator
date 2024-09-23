@@ -6,7 +6,9 @@ header
   color: white;
   width: 100%;
 }
-
+#pregunta{
+    font: bold
+}
 body 
 {
     padding-top: 2em;
@@ -55,8 +57,8 @@ button
 
 .cuadro img
 {
-    display: block;
-    width: 450px;
+    justify-content: center;
+    width: 300px;
     height: auto;
 }
 
