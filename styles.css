@@ -113,8 +113,8 @@ button
 
 button:active
 {
-    transform: scale(0.9);
-    font-weight: bold;
+    transform: scale(0.9); /*Cuando el boton se presiona, se cambia el tamano del boton*/
+    font-weight: bold; /*Cuando el boton se presiona, se pone en negritas el texto del boton*/
 }
 
 @keyframes glowing 
