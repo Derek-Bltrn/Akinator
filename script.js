@@ -142,7 +142,7 @@ let options = {
             }
         }
     }
-};
+
 
 let nodo = options.raiz;
 let pregunta = nodo.pregunta;
