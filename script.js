@@ -3,7 +3,7 @@ let options = {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
         'restantes': ['atletismo', 'gimnasia', 'golf', 'badminton', 'baloncesto', 'beisbol', 'boxeo', 'halterofilia', 'hockey', 'rugby', 'remo',
             'saltos', 'skateboarding', 'surf', 'judo', 'karate', 'taekwondo', 'ciclismo', 'tenis', 'tiro', 'tiroArco', 'triatlon', 'lucha', 'escalada',
-            'esgrima', 'natacion', 'voleibol', 'futbol', 'waterpolo', 'patinaje', 'esqui', 'tiroJabalina', 'tiroPelotaPesada','futbol americano'],
+            'esgrima', 'natacion', 'voleibol', 'futbol', 'waterpolo', 'patinaje', 'esqui', 'tiroJabalina', 'tiroPelotaPesada','futbol americano', ],
         'si': { // Si responde "sí"
             "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
             'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', 'voleibol', 'waterpolo', 'futbol', 'futbol americano'],
@@ -92,7 +92,7 @@ let options = {
                 },
                 'no': { // Sin armas
                     "pregunta": '¿Es un deporte de contacto sin golpes directos?',
-                    'restantes': ['judo', 'lucha', 'karate', 'taekwondo'],
+                    'restantes': ['judo', 'lucha', 'karate', 'taekwondo', 'boxeo'],
                     'si': { // Si responde "sí"
                         'restantes': ['judo', 'lucha'],
                         'pregunta': '¿Se basa en agarres y lanzamientos?',
@@ -105,12 +105,20 @@ let options = {
                     },
                     'no': { // Si hay golpes directos
                         'pregunta': '¿Involucra patadas como técnica principal?',
-                        'restantes': ['karate', 'taekwondo'],
+                        'restantes': ['karate', 'taekwondo', 'boxeo'],
                         'si': { // Si responde "sí"
                             'restantes': ['taekwondo'],
                         },
                         'no': { // Si responde "no"
-                            'restantes': ['karate'],
+                            'pregunta': '¿Contiene cintas para demostrar el nivel del usuario?',
+                            'restantes': ['karate', 'boxeo'],
+                            'si':{//Si responde "sí"
+                                'restantes': ['karate'],
+                            },
+                            'no':{//Si responde "no"
+                                'restantes': ['boxeo']
+                            }
+
                         }
                     }
                 }
