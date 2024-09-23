@@ -75,6 +75,7 @@ button
     border-radius: 5px;
     margin-top: 10px;
     display: inline-block;
+    width: 300px;
 }
 
 .boton_si
