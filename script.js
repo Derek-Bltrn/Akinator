@@ -1,3 +1,4 @@
+//declaramos un JSON con formato tipo árbol binario que se mueve entre nodos dependiendo de si la respuesta es si o no.
 let options = {
     'raiz': {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
@@ -142,26 +143,30 @@ let options = {
             }
         }
     }
-
-
+//Declaramos una variable para ir teniendo registro del nodo en el que estamos
 let nodo = options.raiz;
+//Declaramos una variable para ingresar al dato de la pregunta en el nodo actual 
 let pregunta = nodo.pregunta;
-
+//Función llamada al dar al boton si o no
 function respuesta(YesNo) {
-
+//Si solo queda un elemento en el arreglo de restantes significa que ya se sabe cual es el resultado por lo que se imprime
     if (nodo.restantes.length == 1) {
         document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0];
         return;
     } 
+    //Si dieron que si al botón se actualiza el nodo pasando a su nodo hijo "si"
     if(YesNo)
     {
         nodo=nodo.si;
     }
+    //Si dieron que no al botón se actualiza el nodo pasando a su nodo hijo "no"
     else
     {
         nodo=nodo.no;
     }
+    //la variable para la pregunta se iguala a la pregunta del nodo actual
     pregunta = nodo.pregunta;
+    //Si existe la pregunta, actualizar el elemento html con id=pregunta para mostrar la siguiente pregunta
     if (pregunta) {
         document.getElementById('pregunta').innerHTML = pregunta;
     }
