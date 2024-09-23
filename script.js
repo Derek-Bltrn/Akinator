@@ -151,8 +151,28 @@ let pregunta = nodo.pregunta;
 function respuesta(YesNo) {
 //Si solo queda un elemento en el arreglo de restantes significa que ya se sabe cual es el resultado por lo que se imprime
     if (nodo.restantes.length == 1) {
-        document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0];
-        return;
+      document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0]
+      //Creamos el boton de reset
+      const botonReset = document.createElement('button')
+      // Añadir texto al botón
+      botonReset.innerText = 'Resetear Página'
+      // Estilos basicos del boton
+      botonReset.style.backgroundColor = '#ee5838'
+      botonReset.style.color = 'white'
+      botonReset.style.border = 'none'
+      botonReset.style.borderRadius = '5px'
+      botonReset.style.cursor = 'pointer'
+      // Añadir un evento de click que recargue la página
+      botonReset.onclick = function() {
+        location.reload(); // Esto recarga la página actual
+    }
+        // Insertar el botón en el DOM
+      document.body.appendChild(botonReset)
+      const boton1 = document.getElementById('boton_si')
+      const boton2 = document.getElementById('boton_no')
+      boton1.remove()
+      boton2.remove()
+      return;
     }
     //Si dieron que si al botón se actualiza el nodo pasando a su nodo hijo "si"
     else if(YesNo)
