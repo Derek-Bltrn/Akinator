@@ -11,7 +11,7 @@ header
 }
 body 
 {
-    padding-top: 2em;
+    padding-top: .7em;
     margin: auto; /*Centra el cuerpo*/
     text-align: center; /*La alineacion del texto*/
     font-family: system-ui; /*La tipografia*/
