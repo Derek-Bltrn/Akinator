@@ -3,7 +3,7 @@ let options = {
         'pregunta': '¿Es un deporte que utilice una pelota o similares?',
         'restantes': ['golf', 'badminton', 'baloncesto', 'beisbol', 'hockey', 'rugby', 'remo',
         'surf', 'judo', 'karate', 'taekwondo', 'tenis', 'triatlon', 'lucha',
-            'esgrima', 'natacion', '', 'futbol', 'waterpolo'],
+            'esgrima', 'natacion', 'futbol', 'waterpolo'],
         'si': { // Si responde "sí"
             "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
             'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', '', 'waterpolo', 'futbol'],
