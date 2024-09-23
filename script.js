@@ -68,14 +68,7 @@ let options = {
                 },
                 'no': { // Si no se hacen lanzamientos o se le pega usualmente con los puños a la pelota
                     'pregunta': '¿Se permite el uso de los pies para golpear la pelota?',
-                    'restantes': ['futbol', ''],
-                    'si': { // Si responde "sí"
-                        'pregunta': "¿Crees que adivine?",
-                        'restantes': ['futbol'],
-                    },
-                    'no': { //Si responde "no"
-                        'pregunta': "¿Crees que adivine?",
-                        'restantes': [''],
+                    'restantes': ['futbol'],
                     }
                 }
             }
