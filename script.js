@@ -72,8 +72,7 @@ let options = {
                     'restantes': ['futbol'],
                     }
                 }
-            }
-        },
+            },
         'no': { // Si responde "no" a "¿Es un deporte que utilice una pelota o similares?"
             "pregunta": '¿Es un deporte de combate?',
             'restantes': ['judo', 'taekwondo', 'lucha', 'esgrima', 'karate'],
@@ -142,7 +141,8 @@ let options = {
                 }
             }
         }
-    }
+    }   
+}
 //Declaramos una variable para ir teniendo registro del nodo en el que estamos
 let nodo = options.raiz;
 //Declaramos una variable para ingresar al dato de la pregunta en el nodo actual 
@@ -153,9 +153,9 @@ function respuesta(YesNo) {
     if (nodo.restantes.length == 1) {
         document.getElementById('pregunta').innerHTML = 'El deporte es: ' + nodo.restantes[0];
         return;
-    } 
+    }
     //Si dieron que si al botón se actualiza el nodo pasando a su nodo hijo "si"
-    if(YesNo)
+    else if(YesNo)
     {
         nodo=nodo.si;
     }
