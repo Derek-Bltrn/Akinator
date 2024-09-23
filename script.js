@@ -14,7 +14,7 @@ let options = {
                     "pregunta": '¿La pelota es completamente esférica?',
                     'restantes': ['tenis', 'badminton'],
                     'si': { // Si responde "sí"
-                        'pregunta': '¿Se juega con raqueta?',
+                        'pregunta': '¿Crees que adivine?',
                         'restantes': ['tenis'],
                     },
                     'no': { // Si responde "no"
