@@ -155,7 +155,7 @@ function respuesta(YesNo) {
       //Creamos el boton de reset
       const botonReset = document.createElement('button')
       // Añadir texto al botón
-      botonReset.innerText = 'Resetear Página'
+      botonReset.innerText = 'Otro juego'
       // Estilos basicos del boton
       botonReset.style.backgroundColor = '#ee5838'
       botonReset.style.color = 'white'
