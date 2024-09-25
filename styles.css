@@ -15,7 +15,7 @@ body
     margin: auto; /*Centra el cuerpo*/
     text-align: center; /*La alineacion del texto*/
     font-family: system-ui; /*La tipografia*/
-    font-size: large; /*TamaNo de la fuente grande*/
+    font-size: large; /*Tamaño de la fuente grande*/
     background-image: url(/Imagenes/Pariz.png);
     align-items: center; /*centra los elementos en el flexbox*/
     background-size: cover; /*Cubre todo el area*/
@@ -33,7 +33,7 @@ button
     border: none; /*Ningun borde*/
     padding: 16px 35px; /*Espaciado interno*/
     color: #FFF; /*Color del texto del boton*/
-    font-size: 30px; /*TamaNo de la fuente*/
+    font-size: 30px; /*Tamaño de la fuente*/
     position: relative; /*Posicion relativa para los efectos*/
     border-radius: 12%;/*Para redondear los bordes*/
     margin: 10px; /*Espaciado alrededor del boton*/
@@ -124,7 +124,7 @@ button:active
         background-position: 0 0; /*sombras iniciales*/
     }
     50% {
-        background-position: 350% 0; /*somas intensas*/
+        background-position: 350% 0; /*sombras intensas*/
     }
     100% {
         background-position: 0 0; /*sombras originales*/
