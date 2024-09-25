@@ -48,7 +48,7 @@ let options = {
             'no': { 
                 "pregunta": '¿Se lanzan objetos pesados?',
                 'restantes': ['Baloncesto', 'Rugby', 'Waterpolo', 'Futbol','LanzamientoMartillo','TiroBala','Voleibol'],
-                'si': { 
+                'si': {
                     'pregunta': '¿Se dan vueltas antes de tirar el objeto?',
                     'restantes': ['LanzamientoMartillo','TiroBala'],
                     'si':{
@@ -63,7 +63,6 @@ let options = {
                 'no': { 
                     'pregunta': '¿Tiene una porteria con red?',
                     'restantes': ['Baloncesto', 'Rugby', 'Waterpolo', 'Futbol','Voleibol'],
-                    },
                     'si': { 
                         'pregunta': "¿Se juega principalmente con los pies?",
                         'restantes': ['Waterpolo','Futbol'], 
@@ -95,6 +94,7 @@ let options = {
                                 'restantes': ['Voleibol'], 
                             }
                         }
+                    },
                     }
                 }
             },
