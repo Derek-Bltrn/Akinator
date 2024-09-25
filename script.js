@@ -179,6 +179,15 @@ function respuesta(YesNo) {
       boton2.remove()
       return;
     }
+    else if(YesNo)
+        {
+            nodo=nodo.si;
+        }
+        //Si dieron que no al botón se actualiza el nodo pasando a su nodo hijo "no"
+        else
+        {
+            nodo=nodo.no;
+        }
     pregunta = nodo.pregunta;
     if (pregunta) {
         document.getElementById('pregunta').innerHTML = pregunta;
