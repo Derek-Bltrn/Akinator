@@ -7,7 +7,7 @@ let options = {
             'esgrima', 'natacion', 'futbol', 'waterpolo', 'boxeo', 'gimnasia'],
         'si': { // Si responde "sí"
             "pregunta": '¿Golpeas la pelota(o similares) con alguna herramienta?',
-            'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', '', 'waterpolo', 'futbol'],
+            'restantes': ['Badminton', 'Baloncesto', 'golf', 'beisbol', 'hockey', 'rugby', 'tenis', 'waterpolo', 'futbol'],
             'si': { // Si responde "sí"
                 "pregunta": '¿Hay una red en medio del campo de juego?',
                 'restantes': ['Badminton', 'golf', 'beisbol', 'hockey', 'tenis'],
